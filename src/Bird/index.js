@@ -13,7 +13,7 @@ const JUMP_STRENGTH = {
 
 
 export default class Bird extends Container {
-  constructor(texture, BirdControllerClass) {
+  constructor(texture, BirdControllerClass, color) {
     super(texture);
     this.speed = 0;
 
@@ -21,6 +21,9 @@ export default class Bird extends Container {
     this.birdSprite.scale.set(0.1, 0.1);
     this.birdSprite.anchor.x = 0.5;
     this.birdSprite.anchor.y = 0.5;
+    if (color) {
+      this.birdSprite.tint = color;
+    }
     this.addChild(this.birdSprite);
 
     this.controller = new BirdControllerClass(strength => this.jump(strength));

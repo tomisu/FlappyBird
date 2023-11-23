@@ -26,3 +26,5 @@ export default class TomasController {
     }
   }
 }
+
+export const color = 0xff00ff;

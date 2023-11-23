@@ -56,7 +56,7 @@ class FlappyGame extends Application {
 
     // Now you can use the imported modules
     return modules.map(module => {
-      const newBird = new Bird(this.birdTexture, module.default);
+      const newBird = new Bird(this.birdTexture, module.default, module.color);
       newBird.position.x = BIRD_X;
       newBird.position.y = this.stage.height / 2;
       return newBird;
