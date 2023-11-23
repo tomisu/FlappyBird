@@ -1,23 +1,10 @@
 import { Container, Text } from 'pixi.js';
 
+import compareScores from './compareScores';
 
-function compareScores(entryA, entryB) {
-  const aScore = entryA[1];
-  const bScore = entryB[1];
+const MARGIN_TOP = 20;
+const MARGIN_RIGHT = 20;
 
-  if (aScore === null && bScore === null) {
-    return 0;
-  }
-
-  if (aScore === null) {
-    return -1;
-  }
-  if (bScore === null) {
-    return 1;
-  }
-
-  return aScore >= bScore ? -1 : 1;
-}
 
 export default class ScoreManager extends Container {
   constructor(scores) {
@@ -34,12 +21,11 @@ export default class ScoreManager extends Container {
   updateScore() {
     const style = {
       fontFamily: 'Arial',
-      fontSize: 24,
+      fontSize: 20,
       fill: 0x000000,
       align: 'right',
     };
 
-    console.log(this.scores);
     this.texts = Object.entries(this.scores).sort(compareScores).map(([name, score], index) => {
       const content = `${name} ${score ?? "---"}`
       const scoreStyle = { ...style, fill: score === null ? 0x000000 : 0xff0000 };
@@ -50,5 +36,7 @@ export default class ScoreManager extends Container {
 
     this.removeChildren();
     this.addChild(...this.texts);
+    this.x = 800 - this.width - MARGIN_RIGHT;
+    this.y = MARGIN_TOP;
   }
 }
