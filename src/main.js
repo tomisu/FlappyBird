@@ -6,6 +6,8 @@ import PipeManager from './Pipes';
 import ScoreManager from './Score';
 
 
+const BIRD_X = 150;
+
 
 class FlappyGame extends Application {
   constructor() {
@@ -55,8 +57,8 @@ class FlappyGame extends Application {
     // Now you can use the imported modules
     return modules.map(module => {
       const newBird = new Bird(this.birdTexture, module.default);
-      newBird.position.x = 200;
-      newBird.position.y = 300;
+      newBird.position.x = BIRD_X;
+      newBird.position.y = this.stage.height / 2;
       return newBird;
     });
   }
@@ -69,7 +71,6 @@ class FlappyGame extends Application {
     if (bird.flying === false) {
       // Disqualify bird
       if (bird.disqualified !== true) {
-        console.log("JUGADOR ELIMINADO:", bird.name, this.currentScore);
         bird.score = this.currentScore;
         bird.disqualified = true;
         this.score.changeScore(bird.name, bird.score);

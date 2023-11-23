@@ -1,6 +1,7 @@
 import { Container, Sprite, Text } from 'pixi.js';
 import hitTest from './hitTest';
 
+
 const GRAVITY = 0.01;
 
 
@@ -39,6 +40,10 @@ export default class Bird extends Container {
 
   jump(strength) {
     if (this.flying === false) {
+      return;
+    }
+    const newSpeed = JUMP_STRENGTH[strength];
+    if (newSpeed === undefined) {
       return;
     }
 
