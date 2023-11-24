@@ -1,6 +1,6 @@
 
 
-export default class TomasController {
+export default class YanfangController {
   constructor(jump) {
     /*
     ** Jump is a function that accepts a jump strength (1-3) and makes the bird jump.
@@ -22,6 +22,11 @@ export default class TomasController {
     */
 
     if (birdData.y > scene.height - scene.floor - 10) {
+      // CORRECCIÓN: Esta parte no tiene sentido dentro del If.
+      //  El if está bien para hacer un salto para no tocar el suelo.
+      //  Pero el salto de las tuberías no depende de si estás cerca del suelo.
+      //  Además, saltas para todas las tuberías! Las del techo no hay que saltarlas.
+      //  Pero bien, es un buen intento :)
       const nextPipe = pipes.find(pipe => pipe.x > birdData.x);
       console.log(nextPipe);
 

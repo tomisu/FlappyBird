@@ -18,6 +18,13 @@ export default class JagelyController {
     ** dt: milliseconds elapsed since the last update
     */
 
+    // CORRECCIÓN: Huele un poco de ChatGPTufo...
+    // Realmente isCollidingWithPipe no funciona.
+    // Te da true siempre que haya una tubería, y si ese es el caso,
+    // el pájaro salta. Con lo cual, mueres por arriba en cuanto aparece una tubería.
+    // Si isCollidingWithPipe fuera isAboutToCollideWithPipe, y estuviera bien hecho...
+    // Podría tener sentido. Pero también deberías tener en cuenta si es de arriba o abajo
+
     // Check if the bird is about to collide with a pipe
     const isBirdColliding = this.isCollidingWithPipe(birdData, pipes);
 
@@ -29,7 +36,7 @@ export default class JagelyController {
 
   isCollidingWithPipe(birdData, pipes) {
     for (const pipe of pipes) {
-return true;
+      return true;
     }
     return false; // Bird is not colliding with any pipes
   }

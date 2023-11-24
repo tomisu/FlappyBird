@@ -1,4 +1,4 @@
-export default class TomasController {
+export default class JuanController {
   constructor(jump) {
     this.jump = jump;
     this.name = 'Juan';
@@ -6,6 +6,14 @@ export default class TomasController {
   }
 
   loop(birdData, pipes, scene, dt) {
+    // CORRECCIÓN: *snif snif* Huelo un poco a ChatGPTufo. Con comentarios en español, pero...
+    // A ver... nada tiene mucho sentido.
+    // this.checkPipeTime no está definido, así que todo ese if no vale para nada.
+    // Ya me diŕas tú qué por qué findClosestPipe hace cosas como `let closestDistance = Infinity;`.
+    // Lo único que realmente funciona es saltar cuando estás a punto de tocar el suelo.
+    // No hacía falta irse a ChatGPT ni buscar cosas tan complicadas.
+    // Realmente en unas pocas líneas de código puedes tener algo mucho mejor.
+
     this.timeElapsed += dt / 1000; // Convertimos dt a segundos
 
     // Definimos las distancias de seguridad para el salto
