@@ -1,5 +1,5 @@
 # Flappy Bird Bots
-En esta aplicación es un clon del juego Flappy Bird, en el que podrás programar tu propio Controlador para intentar sacar la máxima puntuación.
+Esta aplicación es un clon del juego Flappy Bird, en el que podrás programar tu propio Controlador para intentar sacar la máxima puntuación.
 
 
 ## Cómo crear un controlador
