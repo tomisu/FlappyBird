@@ -1,5 +1,10 @@
 
 const controllers = [
+  "Tomas", 
+  "Viki",
+  "Guillermo",
+  "Aitor",
+  "Asier",
   "Alejandro",
 ]
 
