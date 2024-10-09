@@ -4,7 +4,7 @@ const controllers = [
   "Viki",
   "Guillermo",
   "Aitor",
-  "Asier",
+  "asier",
   "Alejandro",
 ]
 
