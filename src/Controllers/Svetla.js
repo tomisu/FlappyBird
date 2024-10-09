@@ -1,4 +1,4 @@
-export default class TomasController {
+export default class SvetlaController {
   constructor(saltar) {
     this.saltar = saltar;
     this.name = 'Svetla';
