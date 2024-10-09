@@ -7,7 +7,7 @@ export default class TomasController {
     ** The higher the strength, the bigger the jump
     */
     this.jump = jump;
-    this.name = 'Tomás';
+    this.name = 'Aitor';
   }
 
   loop(birdData, pipes, scene, dt) {
@@ -21,9 +21,10 @@ export default class TomasController {
     ** dt: milliseconds elapsed since last update
     */
 
-    if (birdData.y > scene.height - scene.floor - 10) {
+    if (birdData.y > scene.height - scene.floor - 220) {
       this.jump(3);
     }
+
   }
 }
 
