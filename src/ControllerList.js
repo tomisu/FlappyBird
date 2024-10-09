@@ -1,6 +1,9 @@
 
 const controllers = [
-  "Tomas",
+  "Tomas", 
+  "Viki",
+  "Guillermo",
+  "Aitor",
   "Asier",
 ]
 
