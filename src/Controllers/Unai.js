@@ -26,7 +26,7 @@ export default class UnaiController {
     }
 
     for (let i = 0; i < pipes.length; i++) {
-      if (pipes[i].x > (birdData.x -200) && pipes[i].x < birdData.x +pipes[i].y) {
+      if (pipes[i].x > (birdData.x -200) && pipes[i].x < birdData.x + 2*pipes[i].y - 100) {
         if (pipes[i].isTop) {
         } else {
             if (birdData.y > (pipes[i].y - 70) && birdData.y < (pipes[i].y + 60) && birdData.y > 60) {
