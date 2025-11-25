@@ -21,7 +21,7 @@ export default class ScoreManager extends Container {
   updateScore() {
     const style = {
       fontFamily: 'Arial',
-      fontSize: 20,
+      fontSize: 16,
       fill: 0x000000,
       align: 'right',
     };
@@ -30,7 +30,7 @@ export default class ScoreManager extends Container {
       const content = `${name} ${score ?? "---"}`
       const scoreStyle = { ...style, fill: score === null ? 0x000000 : 0xff0000 };
       const text = new Text(content, scoreStyle);
-      text.y = index * 30;
+      text.y = index * 25;
       return text;
     });
 
