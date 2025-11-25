@@ -9,9 +9,10 @@ const controllers = [
   "IvanCameo",
   "IkerGomes",
   "Tomas",
-  "Gaby"
-  "CarlosCalvo"
-  "Jon"
+  "Gaby",
+  "CarlosCalvo",
+  "Jon",
+  "IAk"
 ]
 
 export default controllers;
