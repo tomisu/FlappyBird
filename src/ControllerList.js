@@ -1,6 +1,3 @@
-
-const controllers = [
-  "Tomas",
-]
+const controllers = ["IvanCorro"];
 
 export default controllers;
