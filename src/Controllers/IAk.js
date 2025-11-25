@@ -25,7 +25,7 @@ export default class IAController {
     }
     const validPipes = pipes.filter(pipe => pipe.x > birdData.x);
     const pipe = validPipes.length > 0 ? validPipes[0] : null;
-    if ((pipe !== null || pipe.isTop) || birdData.y < 50) {
+    if ((pipe !== null || pipe?.isTop) || birdData?.y < 50) {
       return;
     }
     if (pipe !== null && ((birdData.y) - scene.floor - pipe.pipeHeight) > 30) {

@@ -6,6 +6,7 @@ export default class HugoController {
     */
     this.jump = jump;
     this.name = 'Hugo';
+    console.log("Constr Hugo")
   }
 
   loop(birdData, pipes, scene, dt) {

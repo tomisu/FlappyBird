@@ -21,13 +21,13 @@ export default class GabyController {
     ** dt: milliseconds elapsed since last update
     */
     let p = pipes[0];
-    for (pi in pipes){
+    for (let pi in pipes){
         if (birdData.x >= pi.x){ //para coger los que estan a la derecha
             p = pi;
             break;
         }
     }
-    if((birdData.x <= (p.x + p.pipeWidth)) && (birdData.x > p.x)){
+    if((birdData.x <= (p?.x + p?.pipeWidth)) && (birdData?.x > p?.x)){
         //choca en x, ahora hay que ver si choca en y
                 if(p.isTop){ //si es una pipe de arriba
                     if((birdData.y <= (p.y + p.pipeHeight)) && (birdData.y > p.y)){
