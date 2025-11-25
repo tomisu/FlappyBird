@@ -1,6 +1,6 @@
 
 const controllers = [
-  "Tomas",
+  "AnaMaria",
 ]
 
 export default controllers;
