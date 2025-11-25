@@ -12,6 +12,9 @@
     "vite": "^4.5.0",
     "rollup": "^3.29.0"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "pixi.js": "^7.3.2"
   }
