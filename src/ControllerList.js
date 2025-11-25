@@ -1,18 +1,18 @@
-
 const controllers = [
   "AnaMaria",
   "Raul",
   "AneLi",
   "Tomas",
   "Olivia",
-  "Pablin"
+  "Pablin",
   "IvanCameo",
   "IkerGomes",
   "Tomas",
   "Gaby",
   "CarlosCalvo",
   "Jon",
-  "IAk"
-]
+  "IAk",
+  "IvanCorro",
+];
 
 export default controllers;
