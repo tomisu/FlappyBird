@@ -13,5 +13,17 @@
   },
   "dependencies": {
     "pixi.js": "^7.3.2"
-  }
+  },
+  "description": "Esta aplicación es un clon del juego Flappy Bird, en el que podrás programar tu propio Controlador para intentar sacar la máxima puntuación.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomisu/FlappyBird.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomisu/FlappyBird/issues"
+  },
+  "homepage": "https://github.com/tomisu/FlappyBird#readme"
 }
