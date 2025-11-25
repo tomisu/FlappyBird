@@ -1,4 +1,3 @@
-
 const controllers = [
   "Hugo",
   "AnaMaria",
@@ -7,7 +6,7 @@ const controllers = [
   "Tomas",
   "Ariana"
   "Olivia",
-  "Pablin"
+  "Pablin",
   "IvanCameo",
   "IkerGomes",
   "Tomas",
@@ -15,6 +14,7 @@ const controllers = [
   "CarlosCalvo",
   "Jon",
   "IAk",
+  "IvanCorro",
   "IAlkorta"
 ]
 
