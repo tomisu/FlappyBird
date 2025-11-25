@@ -7,7 +7,7 @@ export default class TomasController {
     ** The higher the strength, the bigger the jump
     */
     this.jump = jump;
-    this.name = 'Tomás';
+    this.name = 'Tomas';
   }
 
   loop(birdData, pipes, scene, dt) {
