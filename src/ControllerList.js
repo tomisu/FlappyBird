@@ -10,6 +10,7 @@ const controllers = [
   "IvanCameo",
   "IkerGomes",
   "Tomas",
+  "Patrick",
   "Gaby",
   "CarlosCalvo",
   "Jon",
