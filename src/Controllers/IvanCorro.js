@@ -11,7 +11,7 @@ export default class IvanCorroController {
   loop(birdData, pipes, scene, dt) {
     for (let pipe of pipes) {
       if (!pipe.isTop) {
-        if (pipe.x < 250 && birdData.y > pipe.pipeHeight) {
+        if (pipe.x < 250 && birdData.y > pipe.pipeHeight && pipe.x > 200) {
           this.jump(1);
         }
       }
