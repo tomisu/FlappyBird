@@ -1,4 +1,4 @@
-import { extensions } from "pixi.js/lib";
+
 
 export default class GabyController {
   constructor(jump) {
