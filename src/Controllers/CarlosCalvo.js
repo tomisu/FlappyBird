@@ -39,4 +39,4 @@ export default class CarlosController {
   }
 }
 
-export const color = 0x18C440;
+export const color = 0xC418AA;
