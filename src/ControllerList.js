@@ -12,7 +12,8 @@ const controllers = [
   "Gaby",
   "CarlosCalvo",
   "Jon",
-  "IAk"
+  "IAk",
+  "IAlkorta"
 ]
 
 export default controllers;
