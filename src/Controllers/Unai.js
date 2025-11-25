@@ -26,11 +26,10 @@ export default class UnaiController {
     }
 
     for (let i = 0; i < pipes.length; i++) {
-      if (pipes[i].x > (birdData.x -200) && pipes[i].x < birdData.x + 100 + pipes[i].pipeHeight) {
-
+      if (pipes[i].x > (birdData.x -200) && pipes[i].x < birdData.x +pipes[i].y) {
         if (pipes[i].isTop) {
         } else {
-            if (birdData.y > (pipes[i].y - 65) && birdData.y < (pipes[i].y + 60) && birdData.y > 60) {
+            if (birdData.y > (pipes[i].y - 70) && birdData.y < (pipes[i].y + 60) && birdData.y > 60) {
                 console.log("Jumping!");
                 this.jump(1);
                 break;
