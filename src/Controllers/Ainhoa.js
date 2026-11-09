@@ -25,12 +25,14 @@ export default class AinhaController {
       
       const pipe = pipes[i];
         if (pipe.isTop) {
-          if (birdData.y < pipe.pipeHeight + 6 && birdData.x < pipe.x +5) {
+          if (birdData.y < pipe.pipeHeight + 6 && birdData.x < pipe.x + pipe.pipeWidth) {
             this.jump(1); // Evitar colision con tuberia superior
+            birdData.speed = 0; // Evitar que el ave se quede pegada a la tuberia superior
           }
         } else {
-          if (birdData.y > pipe.pipeHeight - 6 && birdData.x < pipe.x +5) {
+          if (birdData.y > pipe.pipeHeight - 6 && birdData.x < pipe.x + pipe.pipeWidth) {
             this.jump(1); // Evitar colision con tuberia inferior
+            birdData.speed = 0; // Evitar que el ave se quede pegada a la tuberia inferior
           }
         }
         break;
