@@ -12,6 +12,8 @@ const BIRD_X = 150;
 class FlappyGame extends Application {
   constructor() {
     super();
+    // FIX: Cap updates at 30 FPS because game movement and student controllers depend on frame count.
+    this.ticker.maxFPS = 30;
     this.initialize();
   }
 
