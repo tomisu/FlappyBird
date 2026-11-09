@@ -22,7 +22,7 @@ export default class TomasController {
     */
     //Scene floor = 600
     //Scene height = 60
-
+    let alturaSalto = 300;
     let acumular = true;
 
     if(birdData.y < 200){
@@ -30,13 +30,21 @@ export default class TomasController {
     }
     if (pipes[0]!= null){
       if(pipes[0].isTop){
-        if (birdData.y > 450){
+        alturaSalto = 450;
+        if (pipes[1]!= null && pipes[1].isTop == false){
+          alturaSalto = 400;
+        }
+        if (pipes[0].pipeHeight > 200){
+          alturaSalto = 500;
+        }
+        if (birdData.y > alturaSalto){
           this.jump(1);
           acumular = true;
         }
       }
       else{
-        if(birdData.y > 350){
+        alturaSalto = 350;
+        if(birdData.y > alturaSalto){
           this.jump(1);
         }
         if (pipes[0].pipeHeight > 200 && acumular){
