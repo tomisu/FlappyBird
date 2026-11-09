@@ -1,5 +1,3 @@
-
-
 export default class TomasController {
   constructor(jump) {
     /*
@@ -7,7 +5,7 @@ export default class TomasController {
     ** The higher the strength, the bigger the jump
     */
     this.jump = jump;
-    this.name = 'Tomás';
+    this.name = 'Miren';
   }
 
   loop(birdData, pipes, scene, dt) {
@@ -23,7 +21,12 @@ export default class TomasController {
 
     if (birdData.y > scene.height - scene.floor - 10) {
       this.jump(3);
+    }else{
+      if (birdData.x < pipes.x - 5){
+        this.jump(3);
+      }
     }
+    
   }
 }
 
