@@ -1,26 +1,22 @@
-
-import { Application, Assets, Sprite, Text } from 'pixi.js';
-import Bird from './Bird';
-import ControllerList from './ControllerList';
-import PipeManager from './Pipes';
-import ScoreManager from './Score';
-
+import { Application, Assets, Sprite, Text } from "pixi.js";
+import Bird from "./Bird";
+import ControllerList from "./ControllerList";
+import PipeManager from "./Pipes";
+import ScoreManager from "./Score";
 
 const BIRD_X = 150;
-
 
 class FlappyGame extends Application {
   constructor() {
     super();
-    // FIX: Cap updates at 30 FPS because game movement and student controllers depend on frame count.
-    this.ticker.maxFPS = 30;
+    this.ticker.maxFPS = 60;
     this.initialize();
   }
 
   async initialize() {
-    const bgTexture = await Assets.load('/assets/background.png');
-    const birdTexture = await Assets.load('/assets/bird.png');
-    const pipeTexture = await Assets.load('/assets/pipe.png');
+    const bgTexture = await Assets.load("/assets/background.png");
+    const birdTexture = await Assets.load("/assets/bird.png");
+    const pipeTexture = await Assets.load("/assets/pipe.png");
 
     this.birdTexture = birdTexture;
 
@@ -37,12 +33,12 @@ class FlappyGame extends Application {
     this.stage.addChild(...this.birds);
 
     // Create Score
-    this.score = new ScoreManager(this.birds.reduce(
-      (score, bird) => {
+    this.score = new ScoreManager(
+      this.birds.reduce((score, bird) => {
         score[bird.name] = null;
         return score;
-      }, {}
-    ));
+      }, {}),
+    );
     this.stage.addChild(this.score);
 
     this.secondsElapsed = 0;
@@ -53,11 +49,13 @@ class FlappyGame extends Application {
   }
 
   async createBirds() {
-    const imports = ControllerList.map(moduleName => import(`./Controllers/${moduleName}.js`));
+    const imports = ControllerList.map(
+      (moduleName) => import(`./Controllers/${moduleName}.js`),
+    );
     const modules = await Promise.all(imports);
 
     // Now you can use the imported modules
-    return modules.map(module => {
+    return modules.map((module) => {
       const newBird = new Bird(this.birdTexture, module.default, module.color);
       newBird.position.x = BIRD_X;
       newBird.position.y = this.stage.height / 2;
@@ -66,7 +64,7 @@ class FlappyGame extends Application {
   }
 
   get currentScore() {
-    return Math.round(this.secondsElapsed * 100) / 100
+    return Math.round(this.secondsElapsed * 100) / 100;
   }
 
   cleanBird(bird) {
@@ -95,13 +93,13 @@ class FlappyGame extends Application {
   loop(dt) {
     this.secondsElapsed += dt / 1000;
     this.pipeManager.loop(dt);
-    this.birds.forEach(bird => {
+    this.birds.forEach((bird) => {
       bird.loop(dt, this.pipeManager.pipes);
       this.cleanBird(bird);
-    })
+    });
   }
 }
 
 const app = new FlappyGame();
 
-document.getElementById('app').appendChild(app.view);
+document.getElementById("app").appendChild(app.view);
